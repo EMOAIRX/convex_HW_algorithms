@@ -50,13 +50,18 @@ class Simulator:
     def DFP_algorihtm(self, start_point):
         aH = np.eye(2)
         tracing_list = []
+
         x = start_point
         grad = self.f_grad(x)
+
         step = 0
         while np.linalg.norm(grad) >= self.ita:
+            # print("norm:",np.linalg.norm(grad))
+            #print("grad = ",grad)
             direction = -np.dot(aH, grad)
             alpha = self.exact_line_search(x,direction)
             x = x + alpha * direction
+            
             tracing_list.append(x)
             grad_old = grad
             grad = self.f_grad(x)
