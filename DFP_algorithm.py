@@ -104,6 +104,7 @@ def plot(tracing1, tracing2):
 
 
 
+
 if __name__ == "__main__":
     simulator = Simulator()
     _,tracing1 = simulator.DFP_algorihtm(np.array([0,0]))
